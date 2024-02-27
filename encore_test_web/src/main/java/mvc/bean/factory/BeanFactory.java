@@ -3,6 +3,8 @@ package mvc.bean.factory;
 import java.util.HashMap;
 import java.util.Map;
 
+import mvc.service.util.MvcService;
+import mvc.service.util.MvcServieImpl;
 import mvc.user.ctrl.DeleteCtrl;
 import mvc.user.ctrl.JoinCtrl;
 import mvc.user.ctrl.LoginCtrl;
@@ -18,13 +20,15 @@ public class BeanFactory {
 	private Map<String, Controller> map ; 
 	private static BeanFactory instance ; 
 	
+	private MvcService service ; 
 	// join.hanwha , login.hanwha , update.hanwha , delete.hanwha  
 	private BeanFactory() {
+		service = new MvcServieImpl();
 		map = new HashMap<String, Controller>();
-		map.put("/join.hanwha"   , new JoinCtrl());
-		map.put("/login.hanwha"  , new LoginCtrl());
-		map.put("/update.hanwha" , new UpdateCtrl());
-		map.put("/delete.hanwha" , new DeleteCtrl());
+		map.put("/join.hanwha"   , new JoinCtrl(service)); 
+		map.put("/login.hanwha"  , new LoginCtrl(service));
+		map.put("/update.hanwha" , new UpdateCtrl(service));
+		map.put("/delete.hanwha" , new DeleteCtrl(service));
 	}
 	
 	public static BeanFactory getInstance() {

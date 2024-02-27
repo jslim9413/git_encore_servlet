@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div align="center">
+		update.jsp 
+	</div>
 </body>
 </html>

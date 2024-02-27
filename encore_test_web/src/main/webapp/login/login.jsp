@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div align="center">
+		login.jsp 
+	</div>
 </body>
 </html>
