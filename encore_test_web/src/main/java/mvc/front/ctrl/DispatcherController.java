@@ -32,8 +32,10 @@ public class DispatcherController extends HttpServlet {
 		//////////////////
 		BeanFactory factory = BeanFactory.getInstance() ; 
 		Controller ctrl = factory.getCtrl(request.getRequestURI()) ;
+		
 		//////////////////////////////// 수정된 부분 
-		View view = ctrl.execute() ; 	
+		View view = ctrl.execute(request, response) ;  	
+		
 		if( view.isFlag() ) {
 			RequestDispatcher rd =  request.getRequestDispatcher( view.getResponseJsp() );
 			rd.forward(request, response) ;

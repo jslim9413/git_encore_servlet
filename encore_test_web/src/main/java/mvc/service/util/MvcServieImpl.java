@@ -1,22 +1,38 @@
 package mvc.service.util;
 
-public class MvcServieImpl implements MvcService {
+import mvc.domain.dto.RequestUserDTO;
+import mvc.domain.dto.ResponseUserDTO;
+import mvc.model.dao.MvcDao;
 
+public class MvcServieImpl implements MvcService {
+	
+	private MvcDao dao ;
+	public MvcServieImpl() {
+	}
+	public MvcServieImpl(MvcDao dao) {
+		this.dao = dao ; 
+	}
+	
 	@Override
 	public void join() {
 		System.out.println("debug >>> service join()");
+		dao.joinRow();
 	}
 	@Override
-	public void login() {
+	public ResponseUserDTO login(RequestUserDTO params) {
 		System.out.println("debug >>> service login()");
+		return dao.loginRow(params); 
 	}
+	
 	@Override
 	public void update() {
 		System.out.println("debug >>> service update()");
+		dao.updateRow();
 	}
 	@Override
 	public void delete() {
 		System.out.println("debug >>> service delete()");
+		dao.deleteRow();
 	}
 }
 

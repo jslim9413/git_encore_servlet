@@ -12,7 +12,7 @@
 	</div>
 	<p/>
 	<div align = "right">
-		<form method = "get"  action = "login.encore" >
+		<form method = "post"  action = "login.hanwha" >
 			<input type="text" 		name="id" >
 			<input type="password" 	name="pwd" >
 			<input type="submit" value="login">

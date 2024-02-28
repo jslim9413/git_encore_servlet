@@ -2,5 +2,5 @@
     pageEncoding="EUC-KR"%>
 
 <script>
-	location.href = "index.encore" ;
+	location.href = "index.hanwha" ;
 </script>

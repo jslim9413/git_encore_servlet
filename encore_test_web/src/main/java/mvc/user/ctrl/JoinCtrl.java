@@ -1,5 +1,8 @@
 package mvc.user.ctrl;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import mvc.service.util.MvcService;
 import mvc.service.util.MvcServieImpl;
 import mvc.user.ctrl.util.Controller;
@@ -16,7 +19,7 @@ public class JoinCtrl implements Controller {
 	}
 	/////////////////////////////////////////////////////////
 	@Override
-	public View execute() {
+	public View execute(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("debug >>> JoinCtrl execute() " ) ;
 		service.join();  
 		
