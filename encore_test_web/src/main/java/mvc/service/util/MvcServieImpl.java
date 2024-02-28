@@ -1,5 +1,7 @@
 package mvc.service.util;
 
+import java.util.List;
+
 import mvc.domain.dto.RequestUserDTO;
 import mvc.domain.dto.ResponseUserDTO;
 import mvc.model.dao.MvcDao;
@@ -34,5 +36,17 @@ public class MvcServieImpl implements MvcService {
 		System.out.println("debug >>> service delete()");
 		dao.deleteRow();
 	}
+	@Override
+	public List<ResponseUserDTO> select() {
+		System.out.println("debug >>> service select()");
+		return dao.selectRow() ; 
+	}
 }
+
+
+
+
+
+
+
 

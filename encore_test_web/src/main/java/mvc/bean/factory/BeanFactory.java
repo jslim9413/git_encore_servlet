@@ -10,6 +10,7 @@ import mvc.service.util.MvcServieImpl;
 import mvc.user.ctrl.DeleteCtrl;
 import mvc.user.ctrl.JoinCtrl;
 import mvc.user.ctrl.LoginCtrl;
+import mvc.user.ctrl.SelectCtrl;
 import mvc.user.ctrl.UpdateCtrl;
 import mvc.user.ctrl.util.Controller;
 import test.ctrl.IndexController;
@@ -39,6 +40,8 @@ public class BeanFactory {
 		map.put("/login.hanwha"  , new LoginCtrl(service));
 		map.put("/update.hanwha" , new UpdateCtrl(service));
 		map.put("/delete.hanwha" , new DeleteCtrl(service));
+		//// 새로운 업무 등록
+		map.put("/select.hanwha" , new SelectCtrl(service));
 	}
 	
 	public static BeanFactory getInstance() {
