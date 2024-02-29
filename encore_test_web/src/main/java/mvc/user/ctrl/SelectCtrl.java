@@ -29,9 +29,13 @@ public class SelectCtrl implements Controller {
 			System.out.println(dto) ; 
 		}
 		
+		//데이터를 심어보자 
+		request.setAttribute("list", list) ; 
+		
+		
 		View view = new View();
 		view.setFlag(true) ; 
-		view.setResponseJsp("./ok.jsp");
+		view.setResponseJsp("../list/list.jsp");
 		return view ; 
 	}
 

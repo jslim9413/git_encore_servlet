@@ -2,6 +2,7 @@ package mvc.user.ctrl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import mvc.domain.dto.RequestUserDTO;
 import mvc.domain.dto.ResponseUserDTO;
@@ -37,9 +38,14 @@ public class LoginCtrl implements Controller {
 		System.out.println("debug login result >>> " + user) ; 
 		View view = new View();
 		if( user != null ) {
-			request.setAttribute("user", user ) ; 
+			
+			//request.setAttribute("user", user ) ; 
+			
+			HttpSession session = request.getSession() ; // session create 
+			session.setAttribute("user", user) ; 
+			
 			view.setFlag(true) ; 
-			view.setResponseJsp("./ok.jsp") ; 
+			view.setResponseJsp("./main.jsp") ; 
 			return view ;
 		} else {
 			view.setFlag(true) ; 
